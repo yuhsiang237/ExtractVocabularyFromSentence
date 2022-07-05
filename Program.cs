@@ -13,8 +13,8 @@ namespace ExtractVocabularyFromSentence
             Console.WriteLine($"Vocabulary Count : {vocabulary.Count}");
             foreach (var x in vocabulary.Select((item, index) => new { item, index }))
             {
-                Console.Write($"{x.item}\t");
-                if (x.index % 5 == 0)
+                Console.Write($"{x.item.PadRight(12)}\t");
+                if ((x.index+1) % 5 == 0)
                     Console.WriteLine();
             }
         }
