@@ -1,5 +1,5 @@
 # ExtractVocabularyFromSentence
-In this program, it distinct the vocabulary of sentence, which you can easy to check the vocabuary you don't know.
+In this program, it distinguishes the vocabulary of sentence, which you can easy to check the vocabuary you don't know.
 
 ### Use
 **sentence.txt**
