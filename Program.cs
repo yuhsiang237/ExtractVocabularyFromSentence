@@ -54,9 +54,10 @@ namespace ExtractVocabularyFromSentence
             var rs = new List<string>();
             foreach (var t in texts)
             {
-                if (!rs.Select(x=>x.ToUpper()).Contains(t.ToUpper()))
+                var vocabulary = RemoveApostrophe(t);
+                if (!rs.Select(x=>x.ToUpper()).Contains(vocabulary.ToUpper()))
                 {
-                    rs.Add(RemoveApostrophe(t));
+                    rs.Add(RemoveApostrophe(vocabulary));
                 }
             }
             return rs.ToList();
