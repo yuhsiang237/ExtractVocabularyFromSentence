@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,8 +11,12 @@ namespace ExtractVocabularyFromSentence
             var text = ReadFileAsString($@"D:\repo\ExtractVocabularyFromSentence\ExtractVocabularyFromSentence\sentence.txt");
             var vocabulary = FilterVocabulary(DistinctVocabulary(text).ToList());
             Console.WriteLine($"Vocabulary Count : {vocabulary.Count}");
-            foreach (var x in vocabulary)
-                Console.Write($"{x}\t");
+            foreach (var x in vocabulary.Select((item, index) => new { item, index }))
+            {
+                Console.Write($"{x.item}\t");
+                if (x.index % 5 == 0)
+                    Console.WriteLine();
+            }
         }
     }
 
