@@ -10,6 +10,7 @@ namespace ExtractVocabularyFromSentence
         {
             var text = ReadFileAsString($@"D:\repo\ExtractVocabularyFromSentence\ExtractVocabularyFromSentence\sentence.txt");
             var vocabulary = FilterVocabulary(DistinctVocabulary(text));
+            vocabulary.Sort();
             Console.WriteLine($"Vocabulary Count : {vocabulary.Count}");
             foreach (var x in vocabulary.Select((item, index) => new { item, index }))
             {
@@ -50,10 +51,15 @@ namespace ExtractVocabularyFromSentence
         private static List<string> DistinctVocabulary(string text)
         {
             var texts = text.Split(" ");
-            var hs = new HashSet<string>();
+            var rs = new List<string>();
             foreach (var t in texts)
-                hs.Add(RemoveApostrophe(t));
-            return hs.ToList();
+            {
+                if (!rs.Select(x=>x.ToUpper()).Contains(t.ToUpper()))
+                {
+                    rs.Add(t);
+                }
+            }
+            return rs.ToList();
         }
 
         /// <summary>
