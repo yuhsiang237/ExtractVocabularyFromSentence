@@ -2,7 +2,7 @@
 In this program, it distinct the vocabulary of sentence, which you can easy to check the vocabuary you don't know.
 
 ### Use
-sentence.txt
+**sentence.txt**
 ```
 Uh huh, life's like this
 Uh huh, uh huh, that's the way it is
@@ -11,7 +11,8 @@ Uh huh, uh huh, that's the way it is
 ...
 ```
 
-Result
+**output**
+
 ```
 Vocabulary Count : 119
 Uh              huh             life's          like            this
