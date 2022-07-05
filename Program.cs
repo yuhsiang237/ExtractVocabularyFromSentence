@@ -9,7 +9,7 @@ namespace ExtractVocabularyFromSentence
         public static void Main()
         {
             var text = ReadFileAsString($@"D:\repo\ExtractVocabularyFromSentence\ExtractVocabularyFromSentence\sentence.txt");
-            var vocabulary = FilterVocabulary(DistinctVocabulary(text).ToList());
+            var vocabulary = FilterVocabulary(DistinctVocabulary(text));
             Console.WriteLine($"Vocabulary Count : {vocabulary.Count}");
             foreach (var x in vocabulary.Select((item, index) => new { item, index }))
             {
@@ -47,13 +47,13 @@ namespace ExtractVocabularyFromSentence
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
-        private static HashSet<string> DistinctVocabulary(string text)
+        private static List<string> DistinctVocabulary(string text)
         {
             var texts = text.Split(" ");
             var hs = new HashSet<string>();
             foreach (var t in texts)
                 hs.Add(RemoveApostrophe(t));
-            return hs;
+            return hs.ToList();
         }
 
         /// <summary>
