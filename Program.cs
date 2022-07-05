@@ -32,7 +32,7 @@ namespace ExtractVocabularyFromSentence
         { "?", ",", "." };
 
         /// <summary>
-        /// Read File As String
+        /// Read file as string
         /// </summary>
         /// <param name="filePath"></param>
         /// <returns></returns>
@@ -57,7 +57,7 @@ namespace ExtractVocabularyFromSentence
         }
 
         /// <summary>
-        /// Remove Apostrophes from string
+        /// Remove apostrophe from string
         /// </summary>
         /// <param name="s">string</param>
         /// <returns></returns>
@@ -69,7 +69,7 @@ namespace ExtractVocabularyFromSentence
         }
 
         /// <summary>
-        /// Filter Vocabulary 
+        /// Filter vocabulary 
         /// </summary>
         /// <param name="vocabularyList"></param>
         private static List<string> FilterVocabulary(List<string> vocabularyList)
