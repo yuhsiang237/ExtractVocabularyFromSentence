@@ -14,29 +14,28 @@ Uh huh, uh huh, that's the way it is
 **output**
 
 ```
-Vocabulary Count : 119
-Uh              huh             life's          like            this
-uh              that's          the             way             it
-is              'Cause          Chill           out             what
-ya              yellin'         for             Lay             back
-it's            all             been            done            before
-And             if              you             could           only
-let             be              will            see             I
-are             When            we're           driving         in
-your            car             you're          talking         to
-me              one             on              but             become
-Somebody        else            'Round          everyone        You're
-watching        Like            can't           relax           You
-try             cool            look            a               fool
-Tell            Why'd           have            go              and
-make            things          so              complicated     acting
-somebody        Gets            frustrated      Life's          fall
-crawl           break           take            get             turn
-into            Honesty         promise         I'm             never
-gonna           find            faking          No              no
-come            over            unannounced     Dressed         up
-somethin'       Where           where           at              making
-Laugh           when            strike          pose            Take
-off             preppy          clothes         know            not
-fooling         anyone          (no             no)
+Vocabulary Count : 115
+(no,            a               acting          all             And
+anyone          are             at              back            back,
+be              be,             become          been            before
+break           but             can't           car             'Cause
+Chill           clothes         come            complicated?    cool
+could           crawl,          done            Dressed         driving
+else            everyone        faking          fall,           find
+fool            fooling         for?            frustrated      get,
+Gets            go              gonna           have            Honesty
+huh,            I               if              if,             I'm
+in              into            is              it              it's
+know            Laugh           Lay             let             life's
+like            look            make            making          me
+never           no              no)             No,             not
+off             on              one             one,            only
+out             out,            over            pose            preppy
+promise         relax           'Round          see             so
+Somebody        somethin'       strike          take            talking
+Tell            that's          the             things          this
+this,           to              try             turn            Uh
+unannounced     up              watching        way             we're
+what            When            Where           Why'd           will
+ya              yellin'         you             your            you're
 ```
