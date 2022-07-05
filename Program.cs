@@ -56,7 +56,7 @@ namespace ExtractVocabularyFromSentence
             {
                 if (!rs.Select(x=>x.ToUpper()).Contains(t.ToUpper()))
                 {
-                    rs.Add(t);
+                    rs.Add(RemoveApostrophe(t));
                 }
             }
             return rs.ToList();
