@@ -22,7 +22,7 @@ namespace ExtractVocabularyFromSentence
         private static readonly List<string> filterVocabulary = new List<string>()
         { "I'm","is","was","where","when","I"};
 
-        private static readonly List<string> apostrophes = new List<string>()
+        private static readonly List<string> symbols = new List<string>()
         { "?", ",", ".","”","“" };
 
         /// <summary>
@@ -68,31 +68,29 @@ namespace ExtractVocabularyFromSentence
         /// <summary>
         /// Distinct vocabulay
         /// </summary>
-        /// <param name="text"></param>
-        /// <returns></returns>
+        /// <param name="text">plain text</param>
+        /// <returns>List<string></returns>
         private static List<string> DistinctVocabulary(string text)
         {
             var texts = text.Split(" ");
             var rs = new List<string>();
             foreach (var t in texts)
             {
-                var vocabulary = RemoveApostrophe(t);
+                var vocabulary = RemoveSymbol(t);
                 if (!rs.Select(x => x.ToUpper()).Contains(vocabulary.ToUpper()))
-                {
-                    rs.Add(RemoveApostrophe(vocabulary));
-                }
+                    rs.Add(RemoveSymbol(vocabulary));
             }
             return rs.ToList();
         }
 
         /// <summary>
-        /// Remove apostrophe from string
+        /// Remove symbol from string
         /// </summary>
         /// <param name="s">string</param>
-        /// <returns></returns>
-        private static string RemoveApostrophe(string s)
+        /// <returns>string</returns>
+        private static string RemoveSymbol(string s)
         {
-            foreach (var x in apostrophes)
+            foreach (var x in symbols)
                 s = s.Replace(x, string.Empty);
             return s;
         }
