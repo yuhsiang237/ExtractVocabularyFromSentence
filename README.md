@@ -1,6 +1,10 @@
 # ExtractVocabularyFromSentence
 In this program, it distinguishes the vocabulary of sentence, which you can easy to check the vocabuary you don't know.
 
+## Build Status
+
+![workflow](https://github.com/yuhsiang237/ExtractVocabularyFromSentence/actions/workflows/dotnet.yml/badge.svg)
+
 ### Use
 **sentence.txt**
 ```
