@@ -9,15 +9,8 @@ namespace ExtractVocabularyFromSentence
         public static void Main()
         {
             var text = ReadFileAsString($@"D:\repo\ExtractVocabularyFromSentence\ExtractVocabularyFromSentence\sentence.txt");
-            var vocabulary = FilterVocabulary(DistinctVocabulary(text));
-            vocabulary.Sort();
-            Console.WriteLine($"Vocabulary Count : {vocabulary.Count}");
-            foreach (var x in vocabulary.Select((item, index) => new { item, index }))
-            {
-                Console.Write($"{x.item.PadRight(12)}\t");
-                if ((x.index+1) % 5 == 0)
-                    Console.WriteLine();
-            }
+            var vocabulary = ToVocabularyList(text);
+            PrintVocabulary(vocabulary);
         }
     }
 
@@ -30,7 +23,19 @@ namespace ExtractVocabularyFromSentence
         { "I'm","is","was","where","when","I"};
 
         private static readonly List<string> apostrophes = new List<string>()
-        { "?", ",", "." };
+        { "?", ",", ".","”","“" };
+
+        /// <summary>
+        /// To vocabulary list
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        private static List<string> ToVocabularyList(string text)
+        {
+            var distinctVocabulary = DistinctVocabulary(text);
+            var result = FilterVocabulary(distinctVocabulary);
+            return result;
+        }
 
         /// <summary>
         /// Read file as string
@@ -41,6 +46,23 @@ namespace ExtractVocabularyFromSentence
         {
             string[] lines = System.IO.File.ReadAllLines(filePath);
             return string.Join(" ", lines);
+        }
+
+        /// <summary>
+        /// Print vocabulary to screen of console
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        private static void PrintVocabulary(List<string> vocabularyList)
+        {
+            vocabularyList.Sort();
+            Console.WriteLine($"Vocabulary Count : {vocabularyList.Count}");
+            foreach (var x in vocabularyList.Select((item, index) => new { item, index }))
+            {
+                Console.Write($"{x.item.PadRight(12)}\t");
+                if ((x.index + 1) % 5 == 0)
+                    Console.WriteLine();
+            }
         }
 
         /// <summary>
@@ -55,7 +77,7 @@ namespace ExtractVocabularyFromSentence
             foreach (var t in texts)
             {
                 var vocabulary = RemoveApostrophe(t);
-                if (!rs.Select(x=>x.ToUpper()).Contains(vocabulary.ToUpper()))
+                if (!rs.Select(x => x.ToUpper()).Contains(vocabulary.ToUpper()))
                 {
                     rs.Add(RemoveApostrophe(vocabulary));
                 }
