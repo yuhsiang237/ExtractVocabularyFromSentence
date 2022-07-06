@@ -5,6 +5,12 @@ In this program, it distinguishes the vocabulary of sentence, which you can easy
 
 ![workflow](https://github.com/yuhsiang237/ExtractVocabularyFromSentence/actions/workflows/dotnet.yml/badge.svg)
 
+### Run
+
+```
+ dotnet run
+```
+
 ### Use
 **sentence.txt**
 ```
