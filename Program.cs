@@ -78,7 +78,7 @@ namespace ExtractVocabularyFromSentence
             {
                 var vocabulary = RemoveSymbol(t);
                 if (!rs.Select(x => x.ToUpper()).Contains(vocabulary.ToUpper()))
-                    rs.Add(RemoveSymbol(vocabulary));
+                    rs.Add(vocabulary);
             }
             return rs.ToList();
         }
